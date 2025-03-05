@@ -1,0 +1,8 @@
+menu_bienvendida = """BIENVENIDO AL SISTEMA DE REGISTRO DE MASCOTAS"""
+menuprincipal = """ menu principal
+1.Editar mascota
+2.Añadir mascota
+3.Eliminar mascota
+4.Buscar mascotas
+5.Mostrar mascotas
+"""
