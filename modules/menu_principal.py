@@ -18,7 +18,7 @@ def menu_principal():
     app = customtkinter.CTk()
     app.title("Gestion de mascotas")
     app.geometry('250x400')
-    customtkinter.set_appearance_mode("ligth")
+    customtkinter.set_appearance_mode("dark")
     customtkinter.set_default_color_theme("green")
     button = customtkinter.CTkButton(app, text="1.Editar mascota", command=lambda:editar_mascota(app))
     button.grid(row=1, column=0, padx=50, pady=20, columnspan=2)
