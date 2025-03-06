@@ -1,13 +1,35 @@
 import customtkinter
 import os
 import modules.f_json as fj
+import random as rd
 lista_genero = ["FEMENINO","MASCULINO"]
 lista_vacunas = ["Tiene todas las vacunas","Tiene algunas vacunas","No tiene vacunas"]
-def oprimir_boton(app,nombre,especie,raza,genero,edad,dieta,residencia,vacunas):
-    texto = nombre.get("0.0","end")
-    print(texto)
+def oprimir_boton(app,nombre,especie,raza,genero,edad,dieta,residencia,vacunas,DATA):
+    nombre = nombre.get("0.0","end")
+    especie = especie.get("0.0","end")
+    raza = raza.get("0.0","end")
+    genero = genero.get()
+    edad = edad.get("0.0","end")
+    dieta = dieta.get("0.0","end")
+    residencia = residencia.get("0.0","end")
+    vacunas = vacunas.get()
     app.destroy()
-def añadir_mascota():
+    diccionario = fj.leer_json(DATA)
+    id = rd.randrange(1,999999)
+    if id in diccionario:
+        id = rd.randrange(1,99999)
+    nueva_mascota = {id:{
+        "nombre":nombre,
+        "especie":especie,
+        "raza":raza,
+        "genero":genero,
+        "edad":edad,
+        "dieta":dieta,
+        "residencia":residencia,
+        "vacunas":vacunas
+    }}
+    fj.actualizar_json(DATA,nueva_mascota)
+def añadir_mascota(DATA):
     app = customtkinter.CTk()
     app.title("Gestion de mascotas")
     app.geometry('500x820')
@@ -45,6 +67,6 @@ def añadir_mascota():
     label8.grid(row=4, column=1, padx=0, pady=20)
     P8 = customtkinter.CTkComboBox(app,width=150,height=30,values=lista_vacunas)
     P8.grid(row=5, column=1, padx=20, pady=20)
-    button = customtkinter.CTkButton(app, text="aceptar", command=lambda:oprimir_boton(app,P,P2,P3,P4,P5,P6,P7,P8))
+    button = customtkinter.CTkButton(app, text="aceptar", command=lambda:oprimir_boton(app,P,P2,P3,P4,P5,P6,P7,P8,DATA))
     button.grid(row=6, column=1, padx=50, pady=0)
     app.mainloop()
