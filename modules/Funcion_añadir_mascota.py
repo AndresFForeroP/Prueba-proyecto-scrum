@@ -1,8 +1,10 @@
 import customtkinter
+import os
+import modules.f_json as fj
 lista_genero = ["FEMENINO","MASCULINO"]
 lista_vacunas = ["Tiene todas las vacunas","Tiene algunas vacunas","No tiene vacunas"]
-def oprimir_boton(app,P):
-    texto = P.get("0.0","end")
+def oprimir_boton(app,nombre,especie,raza,genero,edad,dieta,residencia,vacunas):
+    texto = nombre.get("0.0","end")
     print(texto)
     app.destroy()
 def añadir_mascota():
@@ -43,6 +45,6 @@ def añadir_mascota():
     label8.grid(row=4, column=1, padx=0, pady=20)
     P8 = customtkinter.CTkComboBox(app,width=150,height=30,values=lista_vacunas)
     P8.grid(row=5, column=1, padx=20, pady=20)
-    button = customtkinter.CTkButton(app, text="aceptar", command=lambda:oprimir_boton(app,P))
+    button = customtkinter.CTkButton(app, text="aceptar", command=lambda:oprimir_boton(app,P,P2,P3,P4,P5,P6,P7,P8))
     button.grid(row=6, column=1, padx=50, pady=0)
     app.mainloop()
