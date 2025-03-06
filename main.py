@@ -1,1 +1,2 @@
-import modules.menu_principal
+import modules.menu_principal as mp
+mp.menu_principal()
