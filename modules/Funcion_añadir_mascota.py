@@ -78,7 +78,22 @@ def añadir_mascota(DATA):
     button.grid(row=6, column=1, padx=50, pady=0)
     app.mainloop()
 def mostrar_mascotas(DATA):
+    mascotas = []
     diccionario = fj.leer_json(DATA)
     print("MASCOTAS REGISTRADS")
-    for keys,values in diccionario:
-        print(f"{keys} {values}")
+    for keys in diccionario:
+        mascotas.append(diccionario[keys]["nombre"])
+    mostrar_mascotas = customtkinter.CTk()
+    mostrar_mascotas.title("Nombres de mascotas")
+    mostrar_mascotas.geometry("230x200")
+    label_nombre = customtkinter.CTkLabel(mostrar_mascotas,text="Elija el nombre de la mascota \nde la cual desea saber sus datos")
+    label_nombre.grid(row=0, column=0, padx=20, pady=20)
+    seleccion_mascota = customtkinter.CTkOptionMenu(mostrar_mascotas,values=mascotas)
+    seleccion_mascota.grid(row=1, column=0, padx=20, pady=20)
+    boton_aceptar = customtkinter.CTkButton(mostrar_mascotas,text=("Buscar"),command=lambda:mostrar_mascota_elegida(seleccion_mascota,diccionario,mostrar_mascotas))
+    boton_aceptar.grid(row = 2, column =0, padx= 20, pady = 20)
+def mostrar_mascota_elegida(mascota,diccionario,menu):
+    #menu.destroy()
+    mascota = mascota.get()
+
+    print(mascota)
