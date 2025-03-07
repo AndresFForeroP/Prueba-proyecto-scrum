@@ -1,12 +1,42 @@
 {
-    "773950": {
-        "nombre": "benito\n",
-        "especie": "perro\n",
-        "raza": "chandoso\n",
+    "473765": {
+        "nombre": "benito",
+        "especie": "perrro",
+        "raza": "chandoso",
         "genero": "MASCULINO",
-        "edad": "3\n",
-        "dieta": "carnivoro\n",
-        "residencia": "cucuta\n",
+        "edad": "5",
+        "dieta": "carnivora",
+        "residencia": "cucuta",
         "vacunas": "No tiene vacunas"
+    },
+    "920029": {
+        "nombre": "asdasdds",
+        "especie": "asd",
+        "raza": "",
+        "genero": "FEMENINO",
+        "edad": "",
+        "dieta": "",
+        "residencia": "",
+        "vacunas": "Tiene todas las vacunas"
+    },
+    "507276": {
+        "nombre": "jose",
+        "especie": "tortuga",
+        "raza": "reptil",
+        "genero": "MASCULINO",
+        "edad": "120",
+        "dieta": "hervivoro",
+        "residencia": "new york",
+        "vacunas": "Tiene todas las vacunas"
+    },
+    "64537": {
+        "nombre": "",
+        "especie": "",
+        "raza": "",
+        "genero": "MASCULINO",
+        "edad": "",
+        "dieta": "",
+        "residencia": "",
+        "vacunas": "Tiene todas las vacunas"
     }
 }
