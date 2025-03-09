@@ -1,5 +1,6 @@
 import customtkinter
 import modules.Funcion_añadir_mascota as am
+#como mencione en el main ya desde este modulo se comienza a usar la libreria customtkinter
 def editar_mascota(app):
     app.destroy()
     am.mostrar_mascota_editar()
@@ -14,6 +15,8 @@ def buscar_mascota(app):
     am.mostrar_mascotas()
 def salir(app):
     app.destroy()
+#en el menu principal se usa la libreria para crear el menu con intrerfaz y segun el boton que oprima el usuario 
+#se envie a la funcion deseada que esta en su debido modulo
 def menu_principal():
     app = customtkinter.CTk()
     app.title("Gestion de mascotas")
